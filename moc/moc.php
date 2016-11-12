@@ -1,10 +1,8 @@
+<?php 
 if(isset($_GET['music']) && $_GET['music'] == "on"){
-	exec('mocp -S');
-	exec('mocp -c');
-	exec('mocp -a /var/www/moc/music');
-	exec('mocp -t shuffle');
-	exec('mocp -p');
-
+	exec('cvlc /var/www/html/moc/music/0451.mp3 -R');
 }else if(isset($_GET['music']) && $_GET['music'] == "off"){
-	exec('mocp -x');
+	exec('killall vlc');
 }
+
+?>
